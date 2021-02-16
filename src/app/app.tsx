@@ -5,6 +5,7 @@ export const App = () => {
   return (
     <>
      <h1>Comic React</h1>
+     <p>Prueba de Despliegue</p>
     </>
   );
 };

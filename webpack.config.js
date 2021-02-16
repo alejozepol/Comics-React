@@ -42,7 +42,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|gif|jpg|svg)$/,
+                test: /\.(png|gif|jpg|svg|ico)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -58,7 +58,7 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: './src/index.html',
-            favicon: './src/assets/favicon.ico',
+            favicon: './src/favicon.ico',
             filename: './index.html',
         }),
         new MiniCssExtraxtPlugin({

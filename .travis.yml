@@ -14,7 +14,7 @@ deploy:
   skip-cleanup: true
   keep-history: true
   token: $FIREBASE_CI
-  project: "Comics-React"
+  project: "comics-react"
   local-dir: ./dist
   target-branch: main
   commit_message: "deploy del proyecto"

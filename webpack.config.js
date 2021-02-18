@@ -37,8 +37,18 @@ module.exports = {
                 use: [{
                         loader: MiniCssExtraxtPlugin.loader,
                     },
-                    'css-loader',
-                    'sass-loader',
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: false,
+                        },
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: false,
+                        },
+                    },
                 ],
             },
             {

@@ -1,12 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import './app.module.scss';
+import React, { useEffect, useState } from "react";
+import { Publication } from "../lib/Publication.interface";
+import API from "../lib/xkcd";
+import Comic from "../components/comic";
+import "./app.scss";
 
 export const App = () => {
+  const [publication, setPublication] = useState<Publication[]>([]);
+  const [ref, setRef] = useState<number>(15)
+
+  useEffect(async () => {
+    const _body:Publication[] = []
+    const {error, body} = await API.getAllAPI(10);
+    if(!error){
+      setPublication(body);
+    }
+    console.log(body)
+  }, []);
+
   return (
-    <>
-     <h1>Comic React</h1>
-     <p>Prueba de Despliegue</p>
-    </>
+    <section className='app'>
+      {
+        publication.map((item) =><Comic key={item.num} publication={item} /> )
+      }
+    </section>
   );
 };
 

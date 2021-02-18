@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Publication } from "../lib/Publication.interface";
 import API from "../lib/xkcd";
 import Comic from "../components/comic";
-import {reactionsIcons} from '../lib/reactions';
+import { reactionsIcons } from "../lib/reactions";
 import "./app.scss";
-
 
 export const App = () => {
   const [publications, setPublications] = useState<Publication[]>([]);
-  const [ref, setRef] = useState<number>(15);
+  const [modal, setModal] = useState({
+    index: 0,
+    view: true,
+  });
 
   useEffect(async () => {
-    const _body: Publication[] = [];
     const { error, body } = await API.getAllAPI(10);
     if (!error) {
       setPublications(body);
@@ -19,17 +20,22 @@ export const App = () => {
     console.log(body);
   }, []);
 
-  const assignReaction = (reaction: string, indexPublication:number) => {
-    publications[indexPublication].reaction={
-      name:reaction,
-      icon: reactionsIcons[reaction]
-    }
-    setPublications([...publications])
+  const assignReaction = (reaction: string, indexPublication: number) => {
+    publications[indexPublication].reaction = {
+      name: reaction,
+      icon: reactionsIcons[reaction],
+    };
+    setPublications([...publications]);
     console.log(publications[indexPublication]);
   };
 
+  const viewModal = () =>
+    modal.view
+      ? setModal({ ...modal, view: false })
+      : setModal({ ...modal, view: true });
+
   return (
-    <section className="app">
+    <main className="app">
       <div className="app__title">
         <h2>xkcd</h2>
         <p>A webcomic of romance,sarcasm, math, and language.</p>
@@ -41,10 +47,24 @@ export const App = () => {
             indexPublication={i}
             publication={item}
             assignReaction={assignReaction}
+            setModal={setModal}
           />
         ))}
       </section>
-    </section>
+      {modal.view && (
+        <section className="modal">
+          <div className="modal__back" onClick={viewModal}></div>
+          <div className="modal__front">
+          <Comic
+            indexPublication={modal.index}
+            publication={publications[modal.index]}
+            assignReaction={assignReaction}
+            setModal={setModal}
+            full={true}
+          /></div>
+        </section>
+      )}
+    </main>
   );
 };
 

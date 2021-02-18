@@ -7,6 +7,8 @@ const Comic = ({
   publication = {} as Publication,
   indexPublication = 0,
   assignReaction = (reaction: string, indexPublication: number) => {},
+  setModal,
+  full= false
 }) => {
   const namemMonth = (numMonth: number) => {
     console.log(numMonth);
@@ -35,15 +37,23 @@ const Comic = ({
 
   const activiteReactions = () =>
     reactions ? setReactions(false) : setReactions(true);
+  
+    const viewDetail = () => {
+      console.log('dsds')
+      setModal({
+        view: true,
+        index: indexPublication
+      })
+    }
 
   return (
-    <section className="Comic">
-      <h2 className="Comic__title">{publication.title}</h2>
-      <span className="Comic__date">{`${publication.day} de ${namemMonth(
+    <section className={ `Comic ${full && 'max'}`}>
+      <h2 className="Comic__title" onClick={viewDetail}>{publication.title}</h2>
+      <span className="Comic__date" onClick={viewDetail}>{`${publication.day} de ${namemMonth(
         Number(publication.month)
       )} `}</span>
-      <span className="Comic__ref">ref: {publication.num}</span>
-      <div className="Comic__img">
+      <span className="Comic__ref" onClick={viewDetail}>ref: {publication.num}</span>
+      <div className={ `Comic__img ${full && 'full'}`} onClick={viewDetail}>
         <img
           className="Comic__img-src"
           src={publication.img}
@@ -67,7 +77,7 @@ const Comic = ({
                 <img
                   src={publication.reaction.icon}
                   alt={publication.reaction.name}
-                  className='Comic__actions-like--reaction---icon'
+                  className="Comic__actions-like--reaction---icon"
                 />
                 <p>{publication.reaction.name}</p>
               </>
@@ -77,8 +87,8 @@ const Comic = ({
             <span className="Comic__actions-like--reactions">
               <FacebookSelector
                 onSelect={(d) => {
-                  assignReaction(d, indexPublication)
-                  activiteReactions()
+                  assignReaction(d, indexPublication);
+                  activiteReactions();
                 }}
               />
             </span>

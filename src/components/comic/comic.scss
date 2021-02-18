@@ -102,3 +102,17 @@
         }
     }
 }
+
+.full {
+    overflow: unset;
+    max-height: none;
+    width: 100%;
+    &>img {
+        width: 100%;
+    }
+}
+
+.max {
+    width: 100%;
+    min-height: 97%;
+}

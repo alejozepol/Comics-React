@@ -9,7 +9,7 @@ git:
   depth: 4
 script:
   - yarn global add webpack webpack-cli
-  - npm i
+  - yarn install
   - yarn build
 deploy:
   provider: firebase

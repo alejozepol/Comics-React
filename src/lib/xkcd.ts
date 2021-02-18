@@ -1,9 +1,11 @@
 import { publicationsMock } from "./mocksAPI";
 import { Publication, Responsive } from "./Publication.interface";
-
 export class RestAPI {
   proxyUrl = 'https://cors-anywhere.herokuapp.com';
   mocks = true;
+  constructor() {
+    this.mocks = Boolean(process.env.MOCKS) || true;
+  }
 
   private generateRandomDigits(from: number, to: number, arr: number[]): number {
     const n: number = Math.floor(Math.random() * to) + from;

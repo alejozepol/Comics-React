@@ -7,8 +7,8 @@ node_js:
   - '12'
 git:
   depth: 4
-script:
-  - npm i -g webpack-cli
+before_script:
+  - yarn global add webpack webpack-cli
   - yarn build
 deploy:
   provider: firebase

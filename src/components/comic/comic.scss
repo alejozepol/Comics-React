@@ -64,9 +64,41 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            >p {
+                margin: 0%;
+                padding: 7px 0;
+                padding-left: 10px;
+                height: 100%;
+            }
         }
         &-like {
             border-right: 1px solid fade-out($contrast, 0.8);
+            position: relative;
+            &--reaction {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                >p {
+                    margin: 0%;
+                    padding: 7px 0;
+                    padding-left: 10px;
+                    height: 100%;
+                }
+                &---icon {
+                    height: 30px;
+                }
+                &:hover {
+                    background-color: fade-out($desactive, 0.2);
+                }
+            }
+            &--reactions {
+                position: absolute;
+                top: -144%;
+                left: 0;
+            }
         }
     }
 }

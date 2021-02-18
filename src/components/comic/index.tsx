@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Publication } from "../../lib/Publication.interface";
+import { FacebookSelector } from "@charkour/react-reactions";
 import "./comic.scss";
 
-const Comic = ({ publication = {} as Publication }) => {
+const Comic = ({
+  publication = {} as Publication,
+  indexPublication = 0,
+  assignReaction = (reaction: string, indexPublication: number) => {},
+}) => {
   const namemMonth = (numMonth: number) => {
     console.log(numMonth);
     const month = [
@@ -25,6 +30,12 @@ const Comic = ({ publication = {} as Publication }) => {
       return month[0];
     }
   };
+
+  const [reactions, setReactions] = useState(false);
+
+  const activiteReactions = () =>
+    reactions ? setReactions(false) : setReactions(true);
+
   return (
     <section className="Comic">
       <h2 className="Comic__title">{publication.title}</h2>
@@ -41,11 +52,39 @@ const Comic = ({ publication = {} as Publication }) => {
       </div>
       <p className="Comic__text">{publication.alt}</p>
       <div className="Comic__actions">
-        <div className='Comic__actions-like'>
-          <span className="material-icons">thumb_up_alt</span>
-          <p>Me gusta</p>
+        <div className="Comic__actions-like">
+          <div
+            className="Comic__actions-like--reaction"
+            onClick={activiteReactions}
+          >
+            {!publication.reaction ? (
+              <>
+                <span className="material-icons">thumb_up_alt</span>
+                <p>Me gusta</p>
+              </>
+            ) : (
+              <>
+                <img
+                  src={publication.reaction.icon}
+                  alt={publication.reaction.name}
+                  className='Comic__actions-like--reaction---icon'
+                />
+                <p>{publication.reaction.name}</p>
+              </>
+            )}
+          </div>
+          {reactions && (
+            <span className="Comic__actions-like--reactions">
+              <FacebookSelector
+                onSelect={(d) => {
+                  assignReaction(d, indexPublication)
+                  activiteReactions()
+                }}
+              />
+            </span>
+          )}
         </div>
-        <div className='Comic__actions-share'>
+        <div className="Comic__actions-share">
           <span className="material-icons">share</span>
           <p>Compartir</p>
         </div>

@@ -10,6 +10,10 @@ export interface Publication{
   img: string;
   title: string;
   day: string;
+  reaction?: {
+    icon: string;
+    name: string;
+  };
 };
 
 export interface Responsive{

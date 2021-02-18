@@ -8,7 +8,6 @@ node_js:
 git:
   depth: 4
 before_script:
-  - yarn global add webpack webpack-cli
   - yarn install
 script:
   - yarn build

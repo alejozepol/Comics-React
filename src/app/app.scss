@@ -1,26 +1,39 @@
-    @import '../_var';
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import '../_var';
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Reggae One', cursive;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 95%;
+    justify-content: center;
+    width: 100vw;
+    background-color: $light;
+    &__title {
+        justify-self: center;
+        text-align: center;
+        &>h2 {
+            font-size: xx-large;
+        }
     }
-    
-    * {
-        box-sizing: border-box;
-        font-size: 22px;
-        font-family: "Helvetica", sans-serif;
-        color: #333333;
-    }
-    
-    .app {
-        width: 100vw;
+    &__content {
+        width: 100%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        justify-content: space-evenly;
+        justify-items: center;
         align-items: flex-start;
     }
+}

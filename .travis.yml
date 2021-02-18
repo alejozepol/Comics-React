@@ -8,6 +8,7 @@ node_js:
 git:
   depth: 4
 script:
+  - npm i -g webpack-cli
   - yarn build
 deploy:
   provider: firebase

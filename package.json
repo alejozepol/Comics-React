@@ -4,7 +4,7 @@
     "main": "src/main.tsx",
     "description": "",
     "scripts": {
-        "build": "NODE_ENV=production webpack --mode production",
+        "build": "NODE_ENV=production npx webpack --mode production",
         "start": "NODE_ENV=development webpack serve --open --mode development",
         "test": "jest",
         "test:watch": "jest --watch"

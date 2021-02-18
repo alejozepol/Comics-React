@@ -7,9 +7,9 @@ node_js:
   - '12'
 git:
   depth: 4
-script:
-  - npm i -g webpack
-  - yarn build
+before_script:
+  - npm i
+  - npm run build
 deploy:
   provider: firebase
   skip-cleanup: true

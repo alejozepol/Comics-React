@@ -15,20 +15,22 @@
     -webkit-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
     -moz-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
     box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
-    cursor: zoom-in;
     &__title {
         grid-area: title;
         text-align: center;
         margin: 0;
         color: $contrast;
+        cursor: zoom-in;
     }
     &__date {
         grid-area: date;
         text-align: center;
+        cursor: zoom-in;
     }
     &__ref {
         grid-area: ref;
         text-align: center;
+        cursor: zoom-in;
     }
     &__img {
         grid-area: img;
@@ -36,6 +38,7 @@
         max-height: 400px;
         text-align: center;
         overflow: hidden;
+        cursor: zoom-in;
         &>img {
             max-width: 100%;
             max-height: 100%;
@@ -46,6 +49,7 @@
         grid-area: text;
         width: 90%;
         padding: 2px 0;
+        cursor: zoom-in;
     }
     &__actions {
         grid-area: actions;
@@ -59,6 +63,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
         }
         &-like {
             border-right: 1px solid fade-out($contrast, 0.8);

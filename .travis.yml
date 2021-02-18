@@ -10,6 +10,7 @@ git:
 script:
   - yarn global add webpack webpack-cli
   - yarn install
+  - yarn add -D webpack-cli
   - yarn build
 deploy:
   provider: firebase

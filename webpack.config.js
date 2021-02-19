@@ -17,7 +17,8 @@ module.exports = () => {
         entry: './src/main.tsx',
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: './bundle.js',
+            filename: '[name].js',
+            chunkFilename: '[id].[chunkhash].js'
         },
         resolve: {
             extensions: ['.js', '.jsx', '.tsx', '.ts'],
@@ -85,5 +86,8 @@ module.exports = () => {
             }),
             new webpack.DefinePlugin(envKeys),
         ],
+        optimization: {
+            runtimeChunk: 'multiple',
+        },
     }
 };

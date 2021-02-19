@@ -5,7 +5,6 @@ _Este proyecto está diseñado para mostrar de manera aleatoria tarjetas con el 
 ## Tecnologias
 _El cliente esta desarrollado utilizando tecnologías JavaScript principalmente React con TypeScript y consume la REST API mediante el método Fetch:_
 
-<<<<<<< HEAD
 -	*React:* como librearía para escribir JS, utilizando fuertemente React Hooks para manejar estados y realizar cambios en tiempo real.
 -	*SCSS:* Como preprocesador CSS para escribir estilos utilizando la metodología BEM (Bloque Elemento Modificador), Esta metodología nos ayuda a escribir estilos más escalables y minimizar el riesgo de sobreponer estilos.
 -	*Babel:* es un transcompilador que nos ayuda a convertir el código para ser entendible para todos los navegadores.
@@ -14,16 +13,6 @@ _El cliente esta desarrollado utilizando tecnologías JavaScript principalmente 
 -	*Jest:* Herramienta para escritura y construcción de pruebas.
 -	*Travis:* Herramienta que nos ayuda a realizar el despliegue e integración continuos  (CI/CD) de manera fácil y rápida. Para este proyecto el Job esta configurado para realizar ejecutar las pruebas,  construir el proyecto y desplegarlo en Firebase Hosting solo si se hace un pull request a la rama main.
 -	*Firebase:* servicios Cloud de Google para proyectos, en este caso se utiliza solo el hosting para desplegar y alojar el cliente.
-=======
--	React : como librearía para escribir JS, utilizando fuertemente React Hooks para manejar estados y realizar cambios en tiempo real.
--	SCSS: Como preprocesador CSS para escribir estilos utilizando la metodología BEM (Bloque Elemento Modificador), Esta metodología nos ayuda a escribir estilos más escalables y minimizar el riesgo de sobreponer estilos.
--	Babel: es un transcompilador que nos ayuda a convertir el código para ser entendible para todos los navegadores.
-- Eslint: Nos ayuda a revisar nuestro código tratando de encontrar errores que podrían provocar problemas de compilación o bien futuros bugs en nuestro desarrollo, tambien ayuda a cumplir las mejores practicas posible para escritura de codigo.
--	WebPack: Empaquetador de JavaScript o TypeScript moderno que con ayuda de Babel nos permite transpirar código de JavaScript para ser interpretado por cualquier navegado, minificando y optimizando el código que se envía a producción con el mejor rendimiento posible.
--	Jest: Herramienta para escritura y construcción de pruebas.
--	Travis: Herramienta que nos ayuda a realizar el despliegue e integración continuos  (CI/CD) de manera fácil y rápida. Para este proyecto el Job esta configurado para realizar ejecutar las pruebas,  construir el proyecto y desplegarlo en Firebase Hosting solo si se hace un pull request a la rama main.
--	Firebase: servicios Cloud de Google para proyectos, en este caso se utiliza solo el hosting para desplegar y alojar el cliente.
->>>>>>> 4983b89e71bfff013fc661a25b3b98e5b680e59a
 
 
 ## Comenzando 🚀

@@ -7,6 +7,7 @@ const Comic = ({
   publication = {} as Publication,
   indexPublication = 0,
   assignReaction = (reaction: string, indexPublication: number) => {},
+  //@ts-ignore
   setModal,
   full = false,
 }) => {

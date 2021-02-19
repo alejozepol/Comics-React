@@ -1,7 +1,11 @@
 import React from 'react';
+import { shallow } from 'enzyme';
+import App from './app';
 describe('App', () => {
-  it('test true', () => {
-    var myNumber = 5;
-    expect(myNumber).toBe(5);
+  test('Component render app', () => {
+    const app = shallow(
+        <App/>
+    );
+    expect(app.length).toEqual(1);
   });
 });

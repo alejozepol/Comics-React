@@ -1,4 +1,4 @@
-@import '../../_var';
+@import '../../var';
 .Comic {
     display: grid;
     grid-template-areas: "title title" "date ref" "text text" "img img" "actions actions";

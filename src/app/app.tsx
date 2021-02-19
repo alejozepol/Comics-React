@@ -15,11 +15,12 @@ export const App = () => {
   });
 
   const loadData = async (isIntersecting: boolean) => {
-    useEffect(async () => {
-      const { error, body } = await API.getAllAPI(6);
-      if (!error) {
-        setPublications([...publications, ...body]);
-      }
+    useEffect(() => {
+      API.getAllAPI(6).then(({ error, body }) =>{
+        if (!error) {
+          setPublications([...publications, ...body]);
+        }
+      });
     }, [isIntersecting]);
   };
 
@@ -51,6 +52,7 @@ export const App = () => {
   const assignReaction = (reaction: string, indexPublication: number) => {
     publications[indexPublication].reaction = {
       name: reaction,
+      // @ts-ignore
       icon: reactionsIcons[reaction],
     };
     setPublications([...publications]);

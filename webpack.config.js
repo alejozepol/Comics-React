@@ -85,5 +85,8 @@ module.exports = () => {
             }),
             new webpack.DefinePlugin(envKeys),
         ],
+        optimization: {
+            runtimeChunk: 'single',
+        },
     }
 };

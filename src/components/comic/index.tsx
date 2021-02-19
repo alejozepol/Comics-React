@@ -60,9 +60,9 @@ const Comic = ({
 
   return (
     <section className={`Comic ${_full && "max"}`}>
-      <h2 className="Comic__title" onClick={viewDetail}>
-        {publication.title}
-      </h2>
+      <div className="Comic__title" onClick={viewDetail}>
+        <h2 className="Comic__title-h">{publication.title}</h2>
+      </div>
       <span className="Comic__date" onClick={viewDetail}>{`${
         publication.day
       } de ${namemMonth(Number(publication.month))} ${Number(

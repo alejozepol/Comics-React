@@ -8,22 +8,37 @@
     align-items: center;
     width: 400px;
     margin: 20px 0px;
-    border-radius: 15px;
-    background-color: fade-out($primary-dark, 0.3);
-    color: $light;
+    border-radius: 5px;
+    background-color: fade-out($white, 0);
+    color: $primary-dark;
     transform: scale(0.95);
+    border: 1px solid fade-out($primary-dark, 0.9);
+    -webkit-box-shadow: -1px 3px 50px -18px fade-out($primary-dark, 0.5);
+    -moz-box-shadow: -1px 3px 50px -18px fade-out($primary-dark, 0.5);
+    box-shadow: -1px 3px 50px -18px fade-out($primary-dark, 0.5);
     &:hover {
         transform: scale(1);
         border: 1px solid fade-out($contrast, 0);
         -webkit-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
         -moz-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
         box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
+        &>.Comic__title {
+            color: $primary-dark;
+            background-color: fade-out($contrast, 0.1);
+        }
+        & .Comic__actions-like--reaction {
+            color: $primary-dark;
+            background-color: fade-out($contrast, 0.1);
+        }
     }
     &__title {
+        height: 100%;
         grid-area: title;
-        text-align: center;
-        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: $contrast;
+        border-bottom: 1px solid fade-out($contrast, 0.8);
         cursor: zoom-in;
     }
     &__date {
@@ -61,7 +76,6 @@
         grid-template-columns: 100%;
         justify-content: space-around;
         align-items: center;
-        margin: 0 5%;
         border-top: 1px solid fade-out($contrast, 0.8);
         &>div {
             display: flex;
@@ -83,6 +97,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                color: $contrast;
                 cursor: pointer;
                 >p {
                     margin: 0%;
@@ -94,7 +109,8 @@
                     height: 30px;
                 }
                 &:hover {
-                    background-color: fade-out($desactive, 0.2);
+                    background-color: fade-out($contrast, 0);
+                    color: $primary-dark;
                 }
             }
             &--reactions {

@@ -3,7 +3,7 @@
     display: grid;
     grid-template-areas: "title title" "date ref" "text text" "img img" "actions actions";
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 80px 40px minmax(auto, 120px) max-content 40px;
+    grid-template-rows: 80px 40px min-content max-content 40px;
     justify-content: center;
     align-items: center;
     width: 400px;

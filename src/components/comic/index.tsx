@@ -46,7 +46,6 @@ const Comic = ({
   };
 
   const resize = () => {
-    console.log(window.innerWidth);
     if (screen.width < 1024 || full !== false) {
       setFull(true);
     } else {

@@ -15,8 +15,6 @@ export const App = () => {
   });
 
   const loadData = async (isIntersecting: boolean) => {
-    console.log(isIntersecting);
-
     useEffect(async () => {
       const { error, body } = await API.getAllAPI(6);
       if (!error) {

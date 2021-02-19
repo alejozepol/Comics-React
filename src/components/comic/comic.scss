@@ -9,12 +9,16 @@
     width: 400px;
     margin: 20px 0px;
     border-radius: 15px;
-    border: 1px solid fade-out($contrast, 0);
     background-color: fade-out($primary-dark, 0.3);
     color: $light;
-    -webkit-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
-    -moz-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
-    box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
+    transform: scale(0.95);
+    &:hover {
+        transform: scale(1);
+        border: 1px solid fade-out($contrast, 0);
+        -webkit-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
+        -moz-box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
+        box-shadow: -1px 3px 50px -18px fade-out($contrast-dark, 0);
+    }
     &__title {
         grid-area: title;
         text-align: center;
@@ -54,7 +58,7 @@
     &__actions {
         grid-area: actions;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 100%;
         justify-content: space-around;
         align-items: center;
         margin: 0 5%;
@@ -72,7 +76,6 @@
             }
         }
         &-like {
-            border-right: 1px solid fade-out($contrast, 0.8);
             position: relative;
             &--reaction {
                 height: 100%;
@@ -97,7 +100,6 @@
             &--reactions {
                 position: absolute;
                 top: -144%;
-                left: 0;
             }
         }
     }
@@ -115,4 +117,5 @@
 .max {
     width: 100%;
     min-height: 97%;
+    transform: scale(1);
 }

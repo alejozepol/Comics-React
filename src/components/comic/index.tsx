@@ -94,10 +94,6 @@ const Comic = ({
             </span>
           )}
         </div>
-        <div className="Comic__actions-share">
-          <span className="material-icons">share</span>
-          <p>Compartir</p>
-        </div>
       </div>
     </section>
   );

@@ -40,9 +40,9 @@ export class RestAPI {
     const refs: number[] = [];
     const publications: Publication[] = [];
     try {
-      console.log(this.mocks, 'mocks');
+  /*     console.log(this.mocks, 'mocks'); */
       
-      if (this.mocks) {
+      if (!this.mocks) {
         return {
           error: false,
           body: publicationsMock

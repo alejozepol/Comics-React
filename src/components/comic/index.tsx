@@ -11,7 +11,6 @@ const Comic = ({
   full= false
 }) => {
   const namemMonth = (numMonth: number) => {
-    console.log(numMonth);
     const month = [
       "Enero",
       "Febrero",
@@ -39,7 +38,6 @@ const Comic = ({
     reactions ? setReactions(false) : setReactions(true);
   
     const viewDetail = () => {
-      console.log('dsds')
       setModal({
         view: true,
         index: indexPublication

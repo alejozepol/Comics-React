@@ -2,9 +2,8 @@ import { publicationsMock } from "./mocksAPI";
 import { Publication, Responsive } from "./Publication.interface";
 export class RestAPI {
   proxyUrl = 'https://cors-anywhere.herokuapp.com';
-  mocks = true;
+  mocks:boolean = process.env.MOCKS === 'true';
   constructor() {
-    this.mocks = Boolean(process.env.MOCKS) || true;
   }
 
   private generateRandomDigits(from: number, to: number, arr: number[]): number {
@@ -41,6 +40,8 @@ export class RestAPI {
     const refs: number[] = [];
     const publications: Publication[] = [];
     try {
+      console.log(this.mocks, 'mocks');
+      
       if (this.mocks) {
         return {
           error: false,

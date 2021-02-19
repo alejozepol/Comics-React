@@ -51,7 +51,7 @@ const Comic = ({
       <h2 className="Comic__title" onClick={viewDetail}>{publication.title}</h2>
       <span className="Comic__date" onClick={viewDetail}>{`${publication.day} de ${namemMonth(
         Number(publication.month)
-      )} `}</span>
+      )} ${Number(publication.year)}`}</span>
       <span className="Comic__ref" onClick={viewDetail}>ref: {publication.num}</span>
       <div className={ `Comic__img ${full && 'full'}`} onClick={viewDetail}>
         <img

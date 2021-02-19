@@ -9,11 +9,11 @@ export const App = () => {
   const [publications, setPublications] = useState<Publication[]>([]);
   const [modal, setModal] = useState({
     index: 0,
-    view: true,
+    view: false,
   });
 
   useEffect(async () => {
-    const { error, body } = await API.getAllAPI(10);
+    const { error, body } = await API.getAllAPI(2);
     if (!error) {
       setPublications(body);
     }

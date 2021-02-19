@@ -1,9 +1,9 @@
 @import '../../_var';
 .Comic {
     display: grid;
-    grid-template-areas: "title title" "date ref" "img img" "text text" "actions actions";
+    grid-template-areas: "title title" "date ref" "text text" "img img" "actions actions";
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 40px 40px auto auto 40px;
+    grid-template-rows: 80px 40px minmax(auto, 120px) max-content 40px;
     justify-content: center;
     align-items: center;
     width: 400px;
@@ -116,6 +116,6 @@
 
 .max {
     width: 100%;
-    min-height: 97%;
+    /*   min-height: 97%; */
     transform: scale(1);
 }

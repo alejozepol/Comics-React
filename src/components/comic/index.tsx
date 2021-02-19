@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Publication } from "../../lib/Publication.interface";
 import { FacebookSelector } from "@charkour/react-reactions";
 import "./comic.scss";
@@ -8,7 +8,7 @@ const Comic = ({
   indexPublication = 0,
   assignReaction = (reaction: string, indexPublication: number) => {},
   setModal,
-  full= false
+  full = false,
 }) => {
   const namemMonth = (numMonth: number) => {
     const month = [
@@ -33,25 +33,45 @@ const Comic = ({
   };
 
   const [reactions, setReactions] = useState(false);
+  const [_full, setFull] = useState(full);
 
   const activiteReactions = () =>
     reactions ? setReactions(false) : setReactions(true);
-  
-    const viewDetail = () => {
-      setModal({
-        view: true,
-        index: indexPublication
-      })
+
+  const viewDetail = () => {
+    setModal({
+      view: true,
+      index: indexPublication,
+    });
+  };
+
+  const resize = () => {
+    console.log(window.innerWidth);
+    if (screen.width < 1024 || full !== false) {
+      setFull(true);
+    } else {
+      setFull(false);
     }
+  };
+  useEffect(() => {
+    resize();
+  }, []);
+  window.addEventListener("resize", resize);
 
   return (
-    <section className={ `Comic ${full && 'max'}`}>
-      <h2 className="Comic__title" onClick={viewDetail}>{publication.title}</h2>
-      <span className="Comic__date" onClick={viewDetail}>{`${publication.day} de ${namemMonth(
-        Number(publication.month)
-      )} ${Number(publication.year)}`}</span>
-      <span className="Comic__ref" onClick={viewDetail}>ref: {publication.num}</span>
-      <div className={ `Comic__img ${full && 'full'}`} onClick={viewDetail}>
+    <section className={`Comic ${_full && "max"}`}>
+      <h2 className="Comic__title" onClick={viewDetail}>
+        {publication.title}
+      </h2>
+      <span className="Comic__date" onClick={viewDetail}>{`${
+        publication.day
+      } de ${namemMonth(Number(publication.month))} ${Number(
+        publication.year
+      )}`}</span>
+      <span className="Comic__ref" onClick={viewDetail}>
+        ref: {publication.num}
+      </span>
+      <div className={`Comic__img ${_full && "full"}`} onClick={viewDetail}>
         <img
           className="Comic__img-src"
           src={publication.img}

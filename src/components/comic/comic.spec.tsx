@@ -12,7 +12,7 @@ describe("Component Comic's card ", () => {
 
   describe("Info Component", () => {
     test("Title", () => {
-      expect(comic.find(".Comic__title").text()).toEqual("mRNA Vaccine");
+      expect(comic.find(".Comic__title-h").text()).toEqual("mRNA Vaccine");
     });
     test("date format", () => {
       expect(comic.find(".Comic__date").text()).toEqual("15 de Febrero 2021");

@@ -1,8 +1,8 @@
 import { publicationsMock } from "./mocksAPI";
 import { Publication, Responsive } from "./Publication.interface";
 export class RestAPI {
-  proxyUrl = 'https://cors-anywhere.herokuapp.com';
-  mocks:boolean = process.env.MOCKS === 'true';
+  proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  mocks: boolean = process.env.MOCKS === 'true';
   constructor() {
   }
 
@@ -16,8 +16,9 @@ export class RestAPI {
 
   async getAPI(url: string, option = { headers: {} }) {
     try {
-      const res = await fetch(`${this.proxyUrl}/${url}`, {
+      const res = await fetch(`${this.proxyUrl}${url}`, {
         ...option,
+        /*        mode: 'no-cors', */
         headers: {
           ...option.headers,
           'X-Requested-With': 'wololo',
@@ -40,8 +41,8 @@ export class RestAPI {
     const refs: number[] = [];
     const publications: Publication[] = [];
     try {
-  /*     console.log(this.mocks, 'mocks'); */
-      
+      /*     console.log(this.mocks, 'mocks'); */
+
       if (this.mocks) {
         return {
           error: false,
@@ -54,9 +55,12 @@ export class RestAPI {
           const { body, error } = await API.getAPI(`https://xkcd.com/${ref}/info.0.json`);
           if (!error) {
             publications.push(body)
-          } /* else{
-            count++
-          } */
+          }else{
+             const res = await API.getAPI(`https://xkcd.now.sh/?comic=${ref}`);
+            if(!res.error){
+              publications.push(res.body)
+            }
+          }
         }
         return {
           error: false,

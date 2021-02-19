@@ -1,6 +1,6 @@
 # COMICS REACT
 
-_Este proyecto está diseñado para mostrar de manera aleatoria tarjetas con el contenido que se obtiene mediante la API [xkcd](https://xkcd.com/json.html) y que el usuario pueda interactuar generando una reacción tipo Facebook y cargando 6 tarjetas mas con un scroll infinito. El proyecto esta despleago en (https://comics-react.firebaseapp.com)[https://comics-react.firebaseapp.com]_
+_Este proyecto está diseñado para mostrar de manera aleatoria tarjetas con el contenido que se obtiene mediante la API [xkcd](https://xkcd.com/json.html) y que el usuario pueda interactuar generando una reacción tipo Facebook y cargando 6 tarjetas mas con un scroll infinito. El proyecto esta despleago en https://comics-react.firebaseapp.com_
 
 ## Tecnologias
 _El cliente esta desarrollado utilizando tecnologías JavaScript principalmente React con TypeScript y consume la REST API mediante el método Fetch:_

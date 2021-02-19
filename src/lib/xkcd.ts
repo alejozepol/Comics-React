@@ -42,7 +42,7 @@ export class RestAPI {
     try {
   /*     console.log(this.mocks, 'mocks'); */
       
-      if (this.mocks) {
+      if (!this.mocks) {
         return {
           error: false,
           body: publicationsMock

@@ -8,7 +8,7 @@ const Comic = ({
   indexPublication = 0,
   assignReaction = (reaction: string, indexPublication: number) => {},
   //@ts-ignore
-  setModal,
+  setModal = {} as React.SetStateAction,
   full = false,
 }) => {
   const namemMonth = (numMonth: number) => {
@@ -87,8 +87,10 @@ const Comic = ({
           >
             {!publication.reaction ? (
               <>
-                <span className="material-icons">thumb_up_alt</span>
-                <p>Me gusta</p>
+                <span className="reactionOff__icon material-icons">
+                  thumb_up_alt
+                </span>
+                <p className="reactionOff__text">Me gusta</p>
               </>
             ) : (
               <>
@@ -97,7 +99,9 @@ const Comic = ({
                   alt={publication.reaction.name}
                   className="Comic__actions-like--reaction---icon"
                 />
-                <p>{publication.reaction.name}</p>
+                <p className="Comic__actions-like--reaction---name">
+                  {publication.reaction.name}
+                </p>
               </>
             )}
           </div>

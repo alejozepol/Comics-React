@@ -15,6 +15,7 @@ export const publicationMock: Publication =
   day: "15"
 };
 
+
 export const publicationsMock: Publication[] = [
   {
     month: "2",

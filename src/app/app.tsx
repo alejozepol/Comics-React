@@ -66,7 +66,7 @@ export const App = () => {
   return (
     <main className="app">
       <div className="app__title">
-        <h2>xkcd</h2>
+        <h2 className='app__title-text'>xkcd</h2>
         <p>A webcomic of romance,sarcasm, math, and language.</p>
       </div>
       <section className="app__content">

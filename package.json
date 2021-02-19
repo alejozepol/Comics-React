@@ -78,6 +78,9 @@
         "moduleNameMapper": {
             "\\.(sass|css|scss)": "<rootDir>/__mocks__/styleMock.ts",
             "\\.(png|jpg|svg)": "<rootDir>/__mocks__/styleMock.ts"
+        },
+        "globals": {
+            "window": {}
         }
     }
 }

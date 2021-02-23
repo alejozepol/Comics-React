@@ -55,11 +55,11 @@ export class RestAPI {
           const { body, error } = await API.getAPI(`https://xkcd.com/${ref}/info.0.json`);
           if (!error) {
             publications.push(body)
-          }else{
-             const res = await API.getAPI(`https://xkcd.now.sh/?comic=${ref}`);
-            if(!res.error){
-              publications.push(res.body)
-            }
+          } else {
+            const res = await fetch(`https://xkcd.now.sh/?comic=${ref}`);
+            const _res = await res.json()
+            console.log();
+            publications.push(_res)
           }
         }
         return {
